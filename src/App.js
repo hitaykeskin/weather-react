@@ -9,14 +9,16 @@ import Footer from "./Footer";
 export default function App() {
   return (
     <div className="App">
-      <div className="fullCard" id="thumbnail">
-        <Title />
-        <Units />
-        <Current />
-        <Image />
-        <Information />
-        <Forecast />
-        <Footer />
+      <div className="container">
+        <div className="fullCard" id="thumbnail">
+          <Title />
+          <Units />
+          <Current />
+          <Image />
+          <Information />
+          <Forecast />
+          <Footer />
+        </div>
       </div>
     </div>
   );
