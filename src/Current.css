@@ -1,0 +1,22 @@
+.Current .current-location {
+  background-color: pink;
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 5px;
+  position: relative;
+  left: 40px;
+}
+
+.Current .btn {
+  border-style: solid;
+  border-radius: 2px;
+  border-color: pink;
+  position: relative;
+  bottom: 38px;
+  left: 170px;
+}
+
+.Current .btn:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.App body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #fffaed;
+}
+
+.App #thumbnail {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: lightpink;
+  background: linear-gradient(35deg, #ccffff, #ffcccc);
+  width: 770px;
+  border-radius: 15px;
+  margin-bottom: 340px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
