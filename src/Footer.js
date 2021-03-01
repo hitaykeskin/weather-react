@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <div className="Footer">
       <footer>
-        <a href="https://github.com/hitaykeskin/shecodes-weather-app">
+        <a href="https://github.com/hitaykeskin/weather-react" target="_blank">
           Open source code by
-        </a>
+        </a>{" "}
         hitayco♡
       </footer>
     </div>

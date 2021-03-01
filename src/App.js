@@ -6,7 +6,7 @@ import Image from "./Image";
 import Information from "./Information";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="fullCard" id="thumbnail">
@@ -21,5 +21,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
