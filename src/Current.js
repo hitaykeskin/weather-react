@@ -17,6 +17,7 @@ export default function Current() {
                 required
                 id="city"
                 name="city-name"
+                autoFocus="on"
               />
               <button class="btn" title="Search">
                 🔎
