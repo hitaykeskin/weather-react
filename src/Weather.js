@@ -1,8 +1,24 @@
 import React from "react";
-import "./Current.css";
-export default function Current() {
+import "./Weather.css";
+export default function Weather() {
   return (
-    <div className="Current">
+    <div className="Weather">
+      <h1>Istanbul</h1>
+      <h2>
+        <div className="weather-temperature">
+          <span className="degree"> 13</span>
+          <span className="units">
+            <a href="#" className="active" id="celsius-unit">
+              °C
+            </a>
+          </span>
+          <span className="units">
+            <a href="#" id="fahrenheit-unit">
+              °F
+            </a>
+          </span>
+        </div>
+      </h2>
       <div class="row">
         <div class="col-6">
           <h3 class="current-date">Today</h3>
@@ -12,7 +28,7 @@ export default function Current() {
             <label for="city">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Please enter your city"
                 required
                 id="city"

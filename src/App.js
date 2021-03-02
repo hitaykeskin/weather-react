@@ -1,7 +1,5 @@
 import "./App.css";
-import Title from "./Title";
-import Units from "./Units";
-import Current from "./Current";
+import Weather from "./Weather";
 import Image from "./Image";
 import Information from "./Information";
 import Forecast from "./Forecast";
@@ -11,9 +9,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="fullCard" id="thumbnail">
-          <Title />
-          <Units />
-          <Current />
+          <Weather />
           <Image />
           <Information />
           <Forecast />

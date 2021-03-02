@@ -1,0 +1,50 @@
+.Weather h1 {
+  font-size: 55px;
+  margin-top: 100px;
+  padding-top: 80px;
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+.Weather .current-location {
+  background-color: pink;
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 5px;
+  position: relative;
+  left: 40px;
+}
+
+.Weather .btn {
+  border-style: solid;
+  border-radius: 2px;
+  border-color: pink;
+  position: relative;
+  bottom: 38px;
+  left: 170px;
+}
+
+.Weather .btn:hover {
+  cursor: pointer;
+}
+
+.Weather .degree,
+.units {
+  font-size: 50px;
+}
+
+.Weather .weather-temperature .active {
+  color: black;
+  text-decoration: none;
+}
+
+.Weather .weather-temperature .active:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+.Weather #fahrenheit-unit,
+#celsius-unit {
+  text-decoration: none;
+}
