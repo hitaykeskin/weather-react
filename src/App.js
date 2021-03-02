@@ -1,13 +1,20 @@
 import "./App.css";
 import Weather from "./Weather";
-import Footer from "./Footer";
 export default function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="fullCard" id="thumbnail">
           <Weather />
-          <Footer />
+          <footer>
+            <a
+              href="https://github.com/hitaykeskin/weather-react"
+              target="_blank"
+            >
+              Open source code by
+            </a>{" "}
+            hitayco♡
+          </footer>
         </div>
       </div>
     </div>

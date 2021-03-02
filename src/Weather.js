@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 export default function Weather() {
   const [city, setCity] = useState("Istanbul");
   const [weatherData, setWeatherData] = useState({});
-
   function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "8db434350a59b780ed9dec3c5447cf53";
@@ -17,12 +17,14 @@ export default function Weather() {
   }
 
   function showTemperature(response) {
+    console.log(response);
     setWeatherData({
       temperature: response.data.main.temp,
       wind: response.data.main.wind,
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
     });
   }
   return (
@@ -45,7 +47,9 @@ export default function Weather() {
       </h2>
       <div class="row">
         <div class="col-6">
-          <h3 class="current-date">Today</h3>
+          <h3 class="current-date">
+            <FormattedDate date={weatherData.date} />
+          </h3>
         </div>
         <div class="col-3">
           <form onSubmit={handleSubmit}>
