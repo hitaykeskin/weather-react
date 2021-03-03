@@ -1,38 +1,13 @@
-import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
-import axios from "axios";
+import React from "react";
+
 import "./Weather.css";
 export default function Weather() {
-  const [city, setCity] = useState("Istanbul");
-  const [weatherData, setWeatherData] = useState({});
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "8db434350a59b780ed9dec3c5447cf53";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemperature);
-  }
-
-  function handleChange(event) {
-    setCity(event.target.value);
-  }
-
-  function showTemperature(response) {
-    console.log(response);
-    setWeatherData({
-      temperature: response.data.main.temp,
-      wind: response.data.main.wind,
-      description: response.data.weather[0].main,
-      humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
-      date: new Date(response.data.dt * 1000),
-    });
-  }
   return (
     <div className="Weather">
-      <h1>{city}</h1>
+      <h1>Istanbul</h1>
       <h2>
         <div className="weather-temperature">
-          <span className="degree"> {Math.round(weatherData.temperature)}</span>
+          <span className="degree"> 13</span>
           <span className="units">
             <a href="#" className="active" id="celsius-unit">
               °C
@@ -47,12 +22,10 @@ export default function Weather() {
       </h2>
       <div class="row">
         <div class="col-6">
-          <h3 class="current-date">
-            <FormattedDate date={weatherData.date} />
-          </h3>
+          <h3 class="current-date">Today </h3>
         </div>
         <div class="col-3">
-          <form onSubmit={handleSubmit}>
+          <form>
             <label for="city">
               <input
                 type="text"
@@ -62,7 +35,6 @@ export default function Weather() {
                 id="city"
                 name="city-name"
                 autoFocus="on"
-                onChange={handleChange}
               />
               <button class="btn" title="Search">
                 🔎
@@ -79,15 +51,15 @@ export default function Weather() {
         alt="weather-icon"
         id="icon"
       />
-      <p className="description">{weatherData.description}</p>
+      <p className="description">Cloudy</p>
       <p className="temp-humidity">
         <span> Humidity:</span>
-        <span className="humidity">{Math.round(weatherData.humidity)}</span>
+        <span className="humidity">42</span>
         <span>%</span>
       </p>
       <p className="wind-speed">
         <span>Wind Speed: </span>
-        <span className="wind">{Math.round(weatherData.wind)}</span>
+        <span className="wind">3</span>
         <span>km/h</span>
       </p>
       <div id="forecast">
