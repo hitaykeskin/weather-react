@@ -5,7 +5,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="fullCard" id="thumbnail">
-          <Weather />
+          <Weather defaultCity="New York" />
           <footer>
             <a
               href="https://github.com/hitaykeskin/weather-react"
