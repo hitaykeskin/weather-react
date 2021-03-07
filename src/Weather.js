@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -13,9 +14,24 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
     });
+  }
+
+  function search() {
+    const apiKey = "8db434350a59b780ed9dec3c5447cf53";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
@@ -48,7 +64,7 @@ export default function Weather(props) {
             </h3>
           </div>
           <div class="col-3">
-            <form>
+            <form onSubmit={handleSubmit}>
               <label for="city">
                 <input
                   type="text"
@@ -58,6 +74,7 @@ export default function Weather(props) {
                   id="city"
                   name="city-name"
                   autoFocus="on"
+                  onChange={handleCityChange}
                 />
                 <button class="btn" title="Search">
                   🔎
@@ -98,9 +115,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "8db434350a59b780ed9dec3c5447cf53";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
