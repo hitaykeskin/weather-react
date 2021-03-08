@@ -5,6 +5,9 @@
   text-transform: uppercase;
   line-height: 100px;
 }
+.Weather canvas {
+  margin-bottom: 20px;
+}
 
 .Weather .current-location {
   background-color: pink;
