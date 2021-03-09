@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -84,16 +85,7 @@ export default function Weather(props) {
           <span className="wind">{weatherData.wind}</span>
           <span>km/h</span>
         </p>
-        <div id="forecast">
-          <h5 class="twelve">12:00</h5>
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png"
-            alt=""
-          />
-        </div>
-        <div class="weather-forecast-temperature">
-          <strong>12°C </strong>11°C
-        </div>
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
