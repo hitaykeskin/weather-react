@@ -10,8 +10,8 @@
 }
 
 .Weather .current-location {
-  background-color: pink;
-  color: white;
+  background-color: #ffebbb;
+  color: black;
   font-size: 15px;
   border-radius: 4px;
   padding: 5px;
@@ -22,7 +22,7 @@
 .Weather .btn {
   border-style: solid;
   border-radius: 2px;
-  border-color: pink;
+  border-color: #ffebbb;
   position: relative;
   bottom: 38px;
   left: 170px;
